@@ -14,16 +14,14 @@ public class Main
     foo.add("F");
     System.out.println("ArrayList before shiftLeft: " + foo);
     shiftLeft(foo);
-    System.out.print("main - ArrayList after shiftLeft: " + foo);
+    System.out.println("main - ArrayList after shiftLeft: " + foo);
 
     ArrayList<Integer> num = new ArrayList<Integer>();
-    num.add(3);
-    num.add(7);
-    num.add(13);
-    num.add(7);
+    num.add(1);
+    num.add(5);
     num.add(9);
-    num.add(7);
-    num.add(3);
+    num.add(5);
+    num.add(1);
     printStatistics(num);
   }
 
@@ -37,10 +35,10 @@ public class Main
 
   }
 
-  public static int printStatistics(final ArrayList<Integer> arr)
+  public static void printStatistics(final ArrayList<Integer> arr)
   {
     int sum = 0;
-    int avg = 0;
+    double avg = 0;
     int mode = 0;
     int maxCount = 0;
     for (Integer N : arr)
@@ -49,7 +47,7 @@ public class Main
       sum += N;
       for (Integer J : arr)
       {
-        if (J == N)
+        if (J.equals(N))
         {
           count ++;
         }
@@ -60,16 +58,16 @@ public class Main
         }
       }
     }
-    avg = sum / arr.size();
+    avg = sum / (double) arr.size();
     System.out.println("Sum: " + sum);
     System.out.println("Avgerage: " + avg);
     if (maxCount == 0)
     {
-      System.out.print("Mode: no single mode");
+      System.out.println("Mode: no single mode");
     }
     else
     {
-      System.out.print("Mode: " + mode);
+      System.out.println("Mode: " + mode);
     }
   }  
 }
